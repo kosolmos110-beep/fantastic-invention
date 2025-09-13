@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIONGAMERTH Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .menu-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            width: 450px;
+            text-align: center;
+        }
+        
+        .menu-title {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .menu-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .menu-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+        }
+        
+        .menu-button:active {
+            transform: translateY(0);
+        }
+        
+        .developers {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .dev-title {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .dev-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .dev-tag {
+            background: linear-gradient(45deg, #4834d4, #686de0);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 12px;
+            height: 12px;
+            background: #2ecc71;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .menu-button.pikachu {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+        }
+        
+        .menu-button.pikachu:hover {
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+        
+        .menu-button.aerxz {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+        }
+        
+        .menu-button.biboss {
+            background: linear-gradient(45deg, #fd79a8, #e84393);
+        }
+        
+        .menu-button.lender {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="status-indicator"></div>
+        <h1 class="menu-title">🦁 Team Developer 🎮</h1>
+        
+        <div class="menu-options">
+            <button class="menu-button pikachu" onclick="executeFunction('pikachu')">
+                ⚡ Pikachu Dev
+            </button>
+            <button class="menu-button aerxz" onclick="executeFunction('aerxz')">
+                🌟 Aerxz
+            </button>
+            <button class="menu-button biboss" onclick="executeFunction('biboss')">
+                👑 BiBoss
+            </button>
+            <button class="menu-button lender" onclick="executeFunction('lender')">
+                💰 Lender
+            </button>
+            <button class="menu-button" onclick="executeFunction('settings')">
+                🦁 LIONGAMERTH
+            </button>
+            <button class="menu-button" onclick="executeFunction('about')">
+                ⚙️ Settings
+            </button>
+        </div>
+        
+        <div class="developers">
+            <div class="dev-title">👥 Team Developer</div>
+            <div class="dev-list">
+                <span class="dev-tag">LIONGAMERTH</span>
+                <span class="dev-tag">pikachu_dev2</span>
+                <span class="dev-tag">Aerxz</span>
+                <span class="dev-tag">biboss</span>
+                <span class="dev-tag">LENDER</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function executeFunction(action) {
+            // เอฟเฟกต์การคลิก
+            const button = event.target;
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 150);
+            
+            // แสดงข้อความตาม action ที่เลือก
+            switch(action) {
+                case 'pikachu':
+                    showMessage('⚡ กำลังเปิด Pikachu Dev...', '#FFD700');
+                    break;
+                case 'aerxz':
+                    showMessage('🌟 กำลังเปิด Aerxz...', '#74b9ff');
+                    break;
+                case 'biboss':
+                    showMessage('👑 กำลังเปิด BiBoss...', '#fd79a8');
+                    break;
+                case 'lender':
+                    showMessage('💰 กำลังเปิด Lender...', '#00b894');
+                    break;
+                case 'settings':
+                    showMessage('⚙️ เปิดการตั้งค่า...', '#6c5ce7');
+                    break;
+                case 'about':
+                    showMessage('ℹ️ Development Team v1.0\nพัฒนาโดยทีม: LIONGAMERTH, pikachu_dev2, Aerxz, biboss, LENDER', '#a29bfe');
+                    break;
+                default:
+                    showMessage('🔄 กำลังประมวลผล...', '#636e72');
+            }
+        }
+        
+        function showMessage(text, color) {
+            // สร้าง notification popup
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${color};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                font-weight: bold;
+                z-index: 1000;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                animation: slideIn 0.3s ease;
+                white-space: pre-line;
+                max-width: 300px;
+            `;
+            
+            notification.textContent = text;
+            document.body.appendChild(notification);
+            
+            // ลบ notification หลังจาก 3 วินาที
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // เพิ่ม CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
